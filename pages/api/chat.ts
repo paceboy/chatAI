@@ -37,6 +37,7 @@ export default async function handler(
         },
         {
           headers: { "Content-Type": "application/json" },
+          timeout: 30000, // 设置 30 秒超时
         }
       );
       console.log("response = ", response);
