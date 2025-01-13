@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import axios, { AxiosStatic } from "axios";
+import axios from "axios";
 
 const BAIDU_API_URL = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions_pro";
 const ACCESS_TOKEN = "24.970609bfcbbf963ea060d9c0f3ab48ce.2592000.1738748655.282335-116979119";
