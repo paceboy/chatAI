@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import axios from "axios";
+import axios, { AxiosStatic } from "axios";
 
 const BAIDU_API_URL = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions_pro";
 const ACCESS_TOKEN = "24.970609bfcbbf963ea060d9c0f3ab48ce.2592000.1738748655.282335-116979119";
@@ -24,6 +24,8 @@ export default async function handler(
     try {
       const { messages } = req.body as ChatRequest;
       console.log("req body messages = ", messages);
+      // axiosRetry(axios, { retries: 3, retryDelay: (retryCount) => retryCount * 1000 });
+
       const response = await axios.post(
         `${BAIDU_API_URL}?access_token=${ACCESS_TOKEN}`,
         {
@@ -48,3 +50,7 @@ export default async function handler(
       res.status(500).json({ message: "Error communicating with Baidu API" });
     }
   }
+
+function axiosRetry(axios: AxiosStatic, arg1: { retries: number; retryDelay: (retryCount: any) => number; }) {
+  throw new Error("Function not implemented.");
+}
