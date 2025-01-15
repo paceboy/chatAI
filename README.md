@@ -1,2 +1,2 @@
 # chatAI
-一个基于next.js的UI对话框
+一个基于next.js的AI对话功能
