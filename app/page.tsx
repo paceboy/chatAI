@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "1rem" }}>
-      <h1>Baidu AI Chat</h1>
+      <h1>Chat to AI</h1>
       <div
         style={{
           border: "1px solid #ccc",
